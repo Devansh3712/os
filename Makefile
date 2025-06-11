@@ -1,7 +1,8 @@
-.PHONY: compile clean
+.PHONY: run clean
 
-compile:
+run:
 	nasm -f bin $(file).asm -o $(file).bin
+	qemu-system-x86_64 $(file).bin
 
 clean:
 	rm *.bin
