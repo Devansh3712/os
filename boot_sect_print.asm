@@ -3,6 +3,7 @@ print:
 
 start:
 	mov al, [bx]
+	; If current character is null-byte (0), stop printing
 	cmp al, 0
 	je done
 
