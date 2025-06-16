@@ -36,7 +36,7 @@ gdt_end:
 gdt_descriptor:
 	; Size of the GDT, always less one of the true size
 	dw gdt_end - gdt_start - 1
-	dw gdt_start
+	dd gdt_start
 
 ; In our GDT, 0x0 -> NULL; 0x08 -> CODE; 0x10 -> DATA
 CODE_SEG equ gdt_code - gdt_start
