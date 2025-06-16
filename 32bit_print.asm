@@ -1,12 +1,13 @@
 [bits 32]
 
 ; VGA (Video Graphics Array) is a standard for displaying graphics/text
-; on screen
+; on screen, with dimensions 80x25 characters
 ; VGA memory starts at 0xB8000 and has a text mode which is useful to
 ; avoid manipulating direct pixels
 VIDEO_MEMORY equ 0xB8000
 WHITE_ON_BLACK equ 0x0F
 
+; This routine prints the string to the top-left of the screen
 print_string_pm:
 	pusha
 	mov edx, VIDEO_MEMORY
